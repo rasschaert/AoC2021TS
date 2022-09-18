@@ -1,0 +1,16 @@
+{
+  "name": "1",
+  "version": "1.0.0",
+  "description": "first exercise of code advent",
+  "main": "./dist/main.js",
+  "author": "",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@types/node": "^18.7.18",
+    "chalk": "^4.1.2",
+    "gulp": "^4.0.2",
+    "gulp-typescript": "^6.0.0-alpha.1",
+    "nodemon": "^2.0.20",
+    "typescript": "^4.8.3"
+  }
+}
