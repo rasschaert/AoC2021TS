@@ -7,7 +7,6 @@
 
 import fs from "fs";
 import readline from "readline";
-// import chalk from "chalk";
 
 // Set up some variables.
 var zeroCountArr: number[] = [];
@@ -91,7 +90,6 @@ function determineEpsilonRate() {
       // Increase the line counter
       lineCount++;
       processDiagnosticEntry(line);
-      // Call the function that determines how to change the position.
     });
     // This is triggered when a close event is emitted.
     rl.on("close", function () {
