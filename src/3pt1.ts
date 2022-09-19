@@ -1,10 +1,3 @@
-/*
-  The require function is not part of the standard
-  JavaScript API, but a nodejs function to load modules.
-  TypeScript prefers that you use the import statement.
-    const events = require('events');
-*/
-
 import fs from "fs";
 import readline from "readline";
 
