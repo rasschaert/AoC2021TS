@@ -13,8 +13,15 @@ import readline from "readline";
 var zeroCountArr: number[] = [];
 var lineCount: number = 0;
 
-function processDiagnosticEntry(diagnosticEntry: string[]) {
-  for (const [index, val] of diagnosticEntry.entries()) {
+/* Process the entry
+  This updating the occurrence counter for zeroes at each position.
+  We don't need to count ones, since we're counting line numbers.
+  If we counted 1000 lines and 600 zeroes at position 0, we can infer that there are 400 ones at position 0.
+*/
+function processDiagnosticEntry(diagnosticEntry: string) {
+  // Spread operator turns the string into an array of characters.
+  let diagEntryArr: string[] = [...diagnosticEntry];
+  for (const [index, val] of diagEntryArr.entries()) {
     let numberVal = parseInt(val);
     let prevCount: number = 0;
     if (numberVal === 0) {
@@ -83,9 +90,7 @@ function determineEpsilonRate() {
     rl.on("line", (line) => {
       // Increase the line counter
       lineCount++;
-      // Spread operator turns the string into an array of characters.
-      let lineArr: string[] = [...line];
-      processDiagnosticEntry(lineArr);
+      processDiagnosticEntry(line);
       // Call the function that determines how to change the position.
     });
     // This is triggered when a close event is emitted.
